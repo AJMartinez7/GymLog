@@ -15,7 +15,6 @@ import com.example.gymlog.MainActivity;
 import com.example.gymlog.database.entities.User;
 import com.example.gymlog.database.typeConverters.LocalDateTypeConverter;
 
-import java.time.LocalDateTime;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
