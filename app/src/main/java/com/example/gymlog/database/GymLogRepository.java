@@ -78,4 +78,20 @@ public class GymLogRepository {
         });
     }
 
+    public User getUserByUserName(String userName) {
+        Future<User> future = GymLogDatabase.databaseWriteExecutor.submit(
+                new Callable<User>() {
+                    @Override
+                    public User call() throws Exception {
+
+                        return userDAO.getUserByUserName(userName);
+                    }
+                });
+        try {
+            future.get();
+        } catch (InterruptedException | ExecutionException e) {
+            Log.i(MainActivity.TAG, "Problem when getting user by username");
+        }
+        return null;
+    }
 }
